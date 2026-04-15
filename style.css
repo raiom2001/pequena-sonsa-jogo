@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+#gameCanvas {
+  border: 3px solid #4CAF50;
+  box-shadow: 0 0 30px #4CAF50aa;
+  max-width: 100vw;
+  max-height: 100vh;
+}
