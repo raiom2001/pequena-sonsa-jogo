@@ -25,8 +25,11 @@ class MenuScene extends Phaser.Scene {
     ['menu_bg','menu_bg_png'].forEach(k=>{
       if(!bgLoaded && this.textures.exists(k) && this.textures.get(k).key !== '__MISSING'){
         const img=this.add.image(W/2,H/2,k);
-        const sc=Math.max(W/img.width, H/img.height);
-        img.setScale(sc);
+        // Usa o menor scale para mostrar a imagem inteira (contain)
+const sc=Math.min(W/img.width, H/img.height);
+img.setScale(sc);
+// Preenche o fundo com cor escura atrás da imagem
+this.add.rectangle(W/2, H/2, W, H, 0x0a1500).setDepth(-1);
         bgLoaded=true;
       }
     });
